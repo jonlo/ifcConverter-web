@@ -5,7 +5,7 @@ const converter = require('../middlewares/converter');
 let app = express();
 
 
-app.get('/convert',converter, (req, res) => {
+app.get('/convert', converter, (req, res) => {
     try {
         res.send({ ok: true, file: req.body.outputFile });
     } catch (error) {
@@ -38,6 +38,18 @@ app.post('/upload', async (req, res) => {
         }
     } catch (err) {
         res.status(500).send(err);
+    }
+});
+
+app.get('/download', function (req, res) {
+    const file = `./uploads/${req.body.file}`;
+    try {
+        res.download(file);
+    } catch (error) {
+        res.status(500);
+        res.json({
+            error: "wrong file provided"
+        })
     }
 });
 
