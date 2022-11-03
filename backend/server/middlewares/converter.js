@@ -3,7 +3,7 @@ const execCall = require('../controllers/execCall');
 module.exports = (req, res, next) => {
 	try {
 		const options = req.body.options.join(',').replace(',', ' ');
-		const execStr = `IfcConvert ./uploads/${req.body.file} ${options} ./uploads/${req.body.outputFile} -y`;
+		const execStr = `./IfcConvert ./uploads/${req.body.file} ${options} ./uploads/${req.body.outputFile} -y`;
 		console.log(execStr);
 		const execData = execCall(execStr);
 		if (execData.ok) {
