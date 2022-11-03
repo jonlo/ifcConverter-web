@@ -1,16 +1,13 @@
 
 const express = require('express');
-const { convertIfc } = require("../controllers/ifcConverterExec");
+const converter = require('../middlewares/converter');
 
 let app = express();
 
 
-app.get('/convertIfc', (req, res) => {
+app.get('/convert',converter, (req, res) => {
     try {
-        console.log(req.body.ifcFile);
-        console.log(req.body.outputFormat);
-        console.log(req.body.parameters);
-        res.send({ ok: true, message: req.body.ifcFile });
+        res.send({ ok: true, file: req.body.outputFile });
     } catch (error) {
         res.status(500);
         res.json({
@@ -19,7 +16,7 @@ app.get('/convertIfc', (req, res) => {
     }
 })
 
-app.post('/upload-ifc', async (req, res) => {
+app.post('/upload', async (req, res) => {
     try {
         if (!req.files) {
             res.send({
