@@ -5,7 +5,7 @@ const converter = require('../middlewares/converter');
 let app = express();
 
 
-app.get('/convert', converter, (req, res) => {
+app.post('/convert', converter, (req, res) => {
     try {
         res.send({ ok: true, file: req.body.outputFile });
     } catch (error) {
