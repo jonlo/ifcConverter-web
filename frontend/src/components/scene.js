@@ -25,8 +25,8 @@ export class Scene extends React.Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		// Pass updated props to 
-		const newValue = this.props.whateverProperty;
-		this.viewGL.updateValue(newValue);
+		const file = this.props.file;
+		this.viewGL.updateFile(file);
 	}
 
 	componentWillUnmount() {
