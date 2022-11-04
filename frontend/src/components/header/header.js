@@ -6,21 +6,18 @@ import React from 'react';
 
 export function Header(props) {
 	const [fileName, setFileName] = React.useState("");
+	const [file, setFile] = React.useState(null);
 
 	const onUploadFile = (e) => {
-		e.preventDefault();
-		uploadCall(e.target.files[0])
+		setFile(e.target.files[0])
 		setFileName(e.target.files[0].name);
 	}
 
-	const onConvert = (e) => {
-		e.preventDefault();
-		convertCall({ file: fileName, options: [], outputFile: "test.dae" }, (convertResponse) => {
-			console.log(convertResponse);
-			downloadCall(convertResponse,(file)=>{
-				props.onFileLoaded(file);
-			});
-		});
+	const onConvert = async (e) => {
+		await uploadCall(file);
+		const convertResponse = await convertCall({ file: fileName, options: [], outputFile: "test.dae" });
+		const downloadedFile = await downloadCall(convertResponse);
+		props.onFileLoaded(downloadedFile);
 	}
 
 	return (

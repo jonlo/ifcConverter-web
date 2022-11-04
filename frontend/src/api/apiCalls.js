@@ -7,15 +7,14 @@ export async function uploadCall(file) {
 	});
 	const responseData = await rawResponse.json();
 	if (rawResponse.status === 200) {
-		console.log('upload successful');
-		console.log(responseData);
+		return responseData;
 	} else {
 		console.log("error");
 	}
 
 }
 
-export async function convertCall(data, callback) {
+export async function convertCall(data) {
 	const rawResponse = await fetch("http://localhost:3005/convert", {
 		method: 'POST',
 		headers: {
@@ -30,13 +29,13 @@ export async function convertCall(data, callback) {
 	});
 	const responseData = await rawResponse.json();
 	if (rawResponse.status === 200) {
-		callback(responseData);
+		return responseData;
 	} else {
 		console.log("error");
 	}
 }
 
-export async function downloadCall(data, callback) {
+export async function downloadCall(data) {
 	const rawResponse = await fetch("http://localhost:3005/download?" + new URLSearchParams({
 		file: data.file
 	}), {
@@ -44,7 +43,7 @@ export async function downloadCall(data, callback) {
 	});
 	const fileBlob = await rawResponse.blob();
 	if (rawResponse.status === 200) {
-		callback(blobToFile(fileBlob, data.file));
+		return blobToFile(fileBlob, data.file);
 	} else {
 		console.log("error");
 	}
