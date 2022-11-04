@@ -42,7 +42,7 @@ app.post('/upload', async (req, res) => {
 });
 
 app.get('/download', function (req, res) {
-    const file = `./uploads/${req.body.file}`;
+    const file = `./uploads/${req.query.file}`;
     try {
         res.download(file);
     } catch (error) {
