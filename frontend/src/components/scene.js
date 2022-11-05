@@ -12,15 +12,16 @@ export class Scene extends React.Component {
 	// ******************* COMPONENT LIFECYCLE ******************* //
 	componentDidMount() {
 		// Get canvas, pass to custom class
-
-		const canvas = this.canvasRef.current;
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-		this.viewGL = new ViewGL(canvas);
-
-		// Init any event listeners
-		window.addEventListener('mousemove', this.mouseMove);
-		window.addEventListener('resize', this.handleResize);
+		if( this.props.file){
+			const canvas = this.canvasRef.current;
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			this.viewGL = new ViewGL(canvas);
+	
+			// Init any event listeners
+			window.addEventListener('mousemove', this.mouseMove);
+			window.addEventListener('resize', this.handleResize);
+		}
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -45,10 +46,12 @@ export class Scene extends React.Component {
 	};
 
 	render() {
-		return (
-			<div className="canvasContainer">
-				<canvas ref={this.canvasRef} />
-			</div>
-		);
+		if( this.props.file){
+			return (
+				<div className="canvasContainer">
+					<canvas ref={this.canvasRef} />
+				</div>
+			);
+		}
 	}
 }

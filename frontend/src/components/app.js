@@ -1,6 +1,7 @@
 import { Scene } from './scene';
 import './App.css';
 import { Header } from './header/header';
+import { CenterPanel } from './centerPanel/centerPanel'
 import React from 'react';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header onFileLoaded={onFileLoad} ></Header>
+      <Header ></Header>
+      <CenterPanel onFileLoaded={onFileLoad} ></CenterPanel>
       <Scene file={file}></Scene>
     </div>
   );
