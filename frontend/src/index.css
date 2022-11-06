@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+
 :root{
     --color1: #23395d;
     --color2: #203354;
@@ -7,8 +9,9 @@
 
 body {
   margin: 0;
+  overflow: hidden;
   height: 100%;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

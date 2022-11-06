@@ -1,5 +1,6 @@
 import './centerPanel.css';
 import { UploadButton } from './uploadButton';
+import { DragDropFile } from './dragDropFile';
 import { uploadCall, convertCall, downloadCall } from '../../api/apiCalls';
 import { Button } from './button';
 import React from 'react';
@@ -8,9 +9,9 @@ export function CenterPanel(props) {
 	const [fileName, setFileName] = React.useState("");
 	const [file, setFile] = React.useState(null);
 
-	const setFileData = (e) => {
-		setFile(e.target.files[0])
-		setFileName(e.target.files[0].name);
+	const setFileData = (selectedFile) => {
+		setFile(selectedFile)
+		setFileName(selectedFile.name);
 	}
 
 	const convertIfc = async (e) => {
@@ -22,8 +23,8 @@ export function CenterPanel(props) {
 
 	return (
 		<div className="Center-panel">
-			<UploadButton onFileSelected={setFileData}></UploadButton>
 			<Button text="Convert" onClick={convertIfc}></Button>
+			<DragDropFile onFileSelected={setFileData}></DragDropFile>
 		</div>
 	);
 
