@@ -49,7 +49,8 @@ export function DragDropFile(props) {
             <input ref={inputRef} type="file" id="input-file-upload" multiple={false} onChange={handleChange} accept=".ifc" />
             <label id="label-file-upload" htmlFor="input-file-upload" className={dragActive ? "drag-active" : ""}>
                 <div>
-                    <p>Drag and drop your file here or</p>
+                    <p>Drag and drop your file here</p>
+                    <img src="ifclogo.png" className="form-file-logo" alt="logo"></img>
                     <button className="upload-button" onClick={onButtonClick}>Upload a file</button>
                 </div>
             </label>

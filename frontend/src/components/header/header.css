@@ -1,9 +1,9 @@
 .Header {
-  background-color: var(--color1);
+  background-color: var(--color4);
   color: #fff;
   padding: 10px;
   height: 10%;
-  font-size: 40px;
+  font-size: 3.75rem;
   font-weight: 700;
   letter-spacing: 3px;
   display: flex;
@@ -11,5 +11,5 @@
   align-items: center;
   z-index: 10;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
