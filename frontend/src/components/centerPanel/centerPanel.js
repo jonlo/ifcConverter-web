@@ -1,5 +1,4 @@
 import './centerPanel.css';
-import { UploadButton } from './uploadButton';
 import { DragDropFile } from './dragDropFile';
 import { uploadCall, convertCall, downloadCall } from '../../api/apiCalls';
 import { Button } from './button';
@@ -21,11 +20,13 @@ export function CenterPanel(props) {
 		props.onFileLoaded(downloadedFile);
 	}
 
-	return (
-		<div className="Center-panel">
-			<Button text="Convert" onClick={convertIfc}></Button>
-			<DragDropFile onFileSelected={setFileData}></DragDropFile>
-		</div>
-	);
+	if(!props.showCenterPanel){
+		return (
+			<div className="Center-panel">
+				<Button text="Convert" onClick={convertIfc}></Button>
+				<DragDropFile onFileSelected={setFileData}></DragDropFile>
+			</div>
+		);
+	}
 
 }

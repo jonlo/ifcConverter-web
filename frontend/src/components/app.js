@@ -6,15 +6,17 @@ import React from 'react';
 
 function App() {
   const [file, setFile] = React.useState(null);
+  const [fileLoaded, setFileLoaded] = React.useState(false);
 
   const onFileLoad = (file) => {
     setFile(file);
+    setFileLoaded(true);
   }
 
   return (
     <div className="App">
       <Header ></Header>
-      <CenterPanel onFileLoaded={onFileLoad} ></CenterPanel>
+      <CenterPanel showCenterPanel={fileLoaded} onFileLoaded={onFileLoad} ></CenterPanel>
       <Scene file={file}></Scene>
     </div>
   );
