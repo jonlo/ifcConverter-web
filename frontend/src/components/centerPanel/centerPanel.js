@@ -10,5 +10,4 @@ export function CenterPanel(props) {
 			</div>
 		);
 	}
-
 }

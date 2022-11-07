@@ -9,6 +9,7 @@ function App() {
   const [convertedFile, setConvertedFile] = React.useState(null);
   const [fileName, setFileName] = React.useState("");
   const [file, setFile] = React.useState(null);
+  const [fileLoaded, setFileLoaded] = React.useState(false);
 
   const onFileConverted = (file) => {
     setConvertedFile(file);
