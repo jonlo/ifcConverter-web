@@ -19,7 +19,7 @@ export class Scene extends React.Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		// Pass updated props to 
-		if(!this.viewGL) {
+		if(!this.viewGL && this.props.file) {
 			const canvas = this.canvasRef.current;
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight;

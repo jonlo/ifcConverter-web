@@ -11,5 +11,6 @@
   align-items: center;
   z-index: 10;
   position: relative;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  display: flex;
+  flex-direction: column;
 }
