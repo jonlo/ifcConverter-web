@@ -4,12 +4,14 @@ import React from 'react';
 export function Dropdown(props) {
 
 	const [items, updateItems] = React.useState(props.children);
+	
+	React.useEffect(() => {
+		props.onItemsUpdated(props.title, items);
+	}, []);
 
 	const toggleSelected = (element) => {
-
 		const selectedItem = items.find((i) => i.id === element.target.innerHTML);
 		selectedItem.selected = !selectedItem.selected;
-
 		if (!props.multiSelection) {
 			items.forEach(item => {
 				if (selectedItem.id !== item.id) {
@@ -18,6 +20,7 @@ export function Dropdown(props) {
 			});
 		}
 		updateItems([...items]);
+		props.onItemsUpdated(props.title, items);
 	};
 
 	return (

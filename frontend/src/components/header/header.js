@@ -6,10 +6,8 @@ export function Header(props) {
 
 	return (
 		<header>
-			<div className="Header">
-				<label>IFC geometry converter</label>
-				<HeaderMenu convertIfc={props.convertIfc}></HeaderMenu>
-			</div>
+			<label>IFC geometry converter</label>
+			<HeaderMenu convertIfc={props.convertIfc} onItemsUpdated={props.onItemsUpdated}></HeaderMenu>
 		</header>
 	);
 

@@ -1,0 +1,13 @@
+.HeaderMenu {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 75%;
+}
+
+.HeaderMenu .lineBreak {
+	width: 100%;
+}

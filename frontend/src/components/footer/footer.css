@@ -1,21 +1,14 @@
 
-header{
+footer{
   background-color: var(--color4);
   color: #fff;
-  padding: 10px;
   height: 15%;
- 
   font-size: 3.75rem;
   font-weight: 700;
-  letter-spacing: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  position: relative;
 }
 
-header label{
-  padding: 1rem;
-}

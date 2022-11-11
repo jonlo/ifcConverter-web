@@ -15,6 +15,8 @@ export async function uploadCall(file) {
 }
 
 export async function convertCall(data) {
+	console.log(data.outputFile);
+	console.log(data.options);
 	const rawResponse = await fetch("http://localhost:3005/convert", {
 		method: 'POST',
 		headers: {

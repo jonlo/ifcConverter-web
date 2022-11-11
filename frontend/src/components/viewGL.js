@@ -11,6 +11,7 @@ export default class ViewGL {
 		this.renderer = new THREE.WebGLRenderer({
 			canvas: canvasRef,
 			antialias: false,
+			alpha: true
 		});
 		const light = new THREE.AmbientLight(0xeeeeee); // soft white light
 		this.scene.add(light);
