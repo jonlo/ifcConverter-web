@@ -1,26 +1,32 @@
 [
 	{
 		"id": "dae",
-		"value": "Collada"
+		"value": "Collada",
+		"selected": true
 	},
 	{
 		"id": "obj",
-		"value": "WaveFront OBJ"
+		"value": "WaveFront OBJ",
+		"selected": false
 	},
 	{
 		"id": "stp",
-		"value": "stp"
+		"value": "stp",
+		"selected": false
 	},
 	{
 		"id": "igs",
-		"value": "IGES"
+		"value": "IGES",
+		"selected": false
 	},
 	{
 		"id": "xml",
-		"value": "XML"
+		"value": "XML",
+		"selected": false
 	},
 	{
 		"id": "svg",
-		"value": "SVG"
+		"value": "SVG",
+		"selected": false
 	}
 ]
