@@ -1,0 +1,26 @@
+[
+	{
+		"id": "dae",
+		"value": "Collada"
+	},
+	{
+		"id": "obj",
+		"value": "WaveFront OBJ"
+	},
+	{
+		"id": "stp",
+		"value": "stp"
+	},
+	{
+		"id": "igs",
+		"value": "IGES"
+	},
+	{
+		"id": "xml",
+		"value": "XML"
+	},
+	{
+		"id": "svg",
+		"value": "SVG"
+	}
+]

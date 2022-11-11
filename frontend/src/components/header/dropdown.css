@@ -1,0 +1,26 @@
+.dropdown {
+	position: relative;
+	display: inline-block;
+	padding :1rem;
+}
+
+.dropdown span{
+	font-size: 20px;
+	border-bottom: 0.25rem solid;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	color:var(--color4);
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 5px 5px;
+	font-size: 14px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}

@@ -22,7 +22,7 @@
   border-radius: 1rem;
   border-style: dashed;
   border-color: #cbd5e1;
-  background-color: #f8fafc18;
+  background-color: var(--color3);
 }
 
 #label-file-upload.drag-active {
