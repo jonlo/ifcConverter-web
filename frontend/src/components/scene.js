@@ -41,7 +41,6 @@ export class Scene extends React.Component {
 		window.removeEventListener('resize', this.handleResize);
 	}
 
-	// ******************* EVENT LISTENERS ******************* //
 	mouseMove = (event) => {
 		this.viewGL.onMouseMove();
 	}
@@ -53,9 +52,7 @@ export class Scene extends React.Component {
 	render() {
 		if (this.props.file) {
 			return (
-				<div className="canvasContainer">
-					<canvas ref={this.canvasRef} />
-				</div>
+				<canvas ref={this.canvasRef} />
 			);
 		}
 	}

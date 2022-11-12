@@ -3,6 +3,7 @@ import './App.css';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { CenterPanel } from './centerPanel/centerPanel'
+import { LoadingScreen } from './centerPanel/loadingScreen'
 import React from 'react';
 import { uploadCall, convertCall, downloadCall } from '../api/apiCalls';
 
@@ -12,6 +13,7 @@ function App() {
   const [file, setFile] = React.useState(null);
   const [options, updateOptions] = React.useState([]);
   const [convertTo, updateConvertTo] = React.useState("dae");
+  const [converting, setConvertIng] = React.useState(false);
 
   const onFileConverted = (file) => {
     setConvertedFile(file);
@@ -23,10 +25,12 @@ function App() {
   }
 
   const convertIfc = async (e) => {
+    setConvertIng(true);
     await uploadCall(file);
     const convertResponse = await convertCall({ file: fileName, options: options, outputFile: `${fileName.split('.')[0]}.${convertTo.id}` });
     const downloadedFile = await downloadCall(convertResponse);
     onFileConverted(downloadedFile);
+    setConvertIng(false);
   }
 
   const setUpdatedItems = (id, items) => {
@@ -39,12 +43,19 @@ function App() {
 
   }
 
+  const reset = () => {
+    setFile(null);
+    setFileName("");
+    setConvertedFile(null);
+  }
+
   return (
     <div className="App">
       <Header convertIfc={convertIfc} onItemsUpdated={setUpdatedItems} ></Header>
-      <CenterPanel setFileData={setFileData} showPanel={convertedFile ? false : true} ></CenterPanel>
+      <CenterPanel setFileData={setFileData} showPanel={convertedFile || converting ? false : true} ></CenterPanel>
+      <LoadingScreen visible={converting}> </LoadingScreen>
       <Scene file={convertedFile}></Scene>
-      <Footer convertIfc={convertIfc} isFileLoaded={file !== null}></Footer>
+      <Footer convertIfc={convertIfc} visible={(file !== null || convertedFile )&& !converting} mode={convertedFile ? 'reset' : 'convert'} reset={reset}></Footer>
 
     </div>
   );

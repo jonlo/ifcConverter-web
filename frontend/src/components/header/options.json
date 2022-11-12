@@ -5,23 +5,23 @@
 		"selected": false
 	},
 	{
-		"id": "plan",
-		"value": "--plan",
+		"id": "model",
+		"value": "--model",
 		"selected": false
 	},
 	{
-		"id": "plan",
-		"value": "--plan",
+		"id": "weld vertices",
+		"value": "--weld-vertices",
 		"selected": false
 	},
 	{
-		"id": "plan",
-		"value": "--plan",
+		"id": "use world coords",
+		"value": "--use-world-coords",
 		"selected": false
 	},
 	{
-		"id": "plan",
-		"value": "--plan",
+		"id": "convert back units",
+		"value": "--convert-back-units",
 		"selected": false
 	},
 	{
