@@ -49,13 +49,21 @@ function App() {
     setConvertedFile(null);
   }
 
+  const download = () => {
+    const url = window.URL.createObjectURL(convertedFile);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = convertedFile.name;
+    a.click();
+  }
+
   return (
     <div className="App">
       <Header convertIfc={convertIfc} onItemsUpdated={setUpdatedItems} ></Header>
       <CenterPanel setFileData={setFileData} showPanel={convertedFile || converting ? false : true} ></CenterPanel>
       <LoadingScreen visible={converting}> </LoadingScreen>
       <Scene file={convertedFile}></Scene>
-      <Footer convertIfc={convertIfc} visible={(file !== null || convertedFile )&& !converting} mode={convertedFile ? 'reset' : 'convert'} reset={reset}></Footer>
+      <Footer convertIfc={convertIfc} visible={(file !== null || convertedFile )&& !converting} mode={convertedFile ? 'reset' : 'convert'} reset={reset} download={download}></Footer>
 
     </div>
   );

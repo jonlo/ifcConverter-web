@@ -13,6 +13,7 @@ export function Footer(props) {
 		} else {
 			return (
 				<footer>
+					<Button text="Download" onClick={props.download} visible={true}></Button>
 					<Button text="Upload new" onClick={props.reset} visible={true}></Button>
 				</footer>
 			);

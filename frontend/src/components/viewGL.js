@@ -13,24 +13,39 @@ export default class ViewGL {
 			antialias: false,
 			alpha: true
 		});
-		const light = new THREE.AmbientLight(0xeeeeee); // soft white light
+		const light = new THREE.AmbientLight(0xeeeeee);
 		this.scene.add(light);
 		this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-		//controls.update() must be called after any manual changes to the camera's transform
 		this.controls.update();
-
-		// Create meshes, materials, etc.
-		// const geometry = new THREE.BoxGeometry(10, 10, 10);
-		// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-		// const cube = new THREE.Mesh(geometry, material);
-		// this.scene.add(cube);
+		const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.5);
+		directionalLight1.position.set(1, 1, 0);
+		this.scene.add(directionalLight1);
+		const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+		directionalLight2.position.set(0, 1, -1);
+		this.scene.add(directionalLight2);
 		this.update();
+		this.loadedFile = null;
+	}
+
+	setCanvas(canvasRef) {
+		this.renderer = new THREE.WebGLRenderer({
+			canvas: canvasRef,
+			antialias: false,
+			alpha: true
+		});
+		this.controls.reset();
+		this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+		this.controls.update();
 	}
 
 	// ******************* PUBLIC EVENTS ******************* //
 	updateFile(file) {
+		if (this.loadedFile) {
+			this.scene.remove(this.loadedFile);
+		}
 		this.objLoader.loadFile(file, (object3d) => {
 			this.scene.add(object3d);
+			this.loadedFile = object3d;
 		});
 	}
 
