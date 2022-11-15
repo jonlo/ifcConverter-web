@@ -4,8 +4,8 @@
     <contributor>
       <authoring_tool>IfcOpenShell v0.7.0-e508fb44</authoring_tool>
     </contributor>
-    <created>2022-11-12T07:04:18</created>
-    <modified>2022-11-12T07:04:18</modified>
+    <created>2022-11-15T20:00:45</created>
+    <modified>2022-11-15T20:00:45</modified>
     <unit name="METER" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
