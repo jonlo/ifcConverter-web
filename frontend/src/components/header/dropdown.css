@@ -2,7 +2,7 @@
 	position: relative;
 	display: inline-block;
 	padding: 1rem;
-	line-height: 2rem;
+	line-height: 0.5rem;
 }
 
 .dropdown span {
@@ -22,6 +22,8 @@
 	z-index: 1;
 	margin-top: 1rem;
 	user-select: none; 
+	line-height: 2rem;
+
 }
 
 .dropdown-content p{
