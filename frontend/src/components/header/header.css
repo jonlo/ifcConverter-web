@@ -4,7 +4,6 @@ header{
   color: #fff;
   padding: 10px;
   height: 15%;
- 
   font-size: 3.75rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -17,5 +16,5 @@ header{
 }
 
 header label{
-  padding: 1rem;
+  margin: 1rem;
 }

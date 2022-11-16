@@ -3,12 +3,12 @@
 	display: inline-block;
 	padding: 1rem;
 	line-height: 0.5rem;
+	cursor: pointer;
 }
 
 .dropdown span {
 	font-size: 20px;
 	border-bottom: 0.25rem solid;
-	padding: 0.5rem;
 }
 
 .dropdown-content {
