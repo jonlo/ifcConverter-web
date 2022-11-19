@@ -13,7 +13,9 @@ services:
     container_name: backend
     build: ./backend
     ports:
-      - "8888:8888"
+      - "3005:3005"
+    volumes:
+      - ./uploads:/src/uploads/:rw
     restart: always
   frontend:
     container_name: frontend
