@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "radar-frontend",
+            "name": "frontend",
             "program": "${workspaceFolder}\\server\\server.js"
         }
     ]
