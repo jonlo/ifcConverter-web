@@ -1,7 +1,15 @@
+let backendURL = "http://localhost:3005";
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+	backendURL = "http://localhost:3005";
+} else {
+	backendURL = "/backend";
+}
+
 export async function uploadCall(file) {
 	const data = new FormData()
 	data.append('ifc', file)
-	const rawResponse = await fetch("http://localhost:3005/upload", {
+	const rawResponse = await fetch(`${backendURL}/upload`, {
 		method: 'POST',
 		body: data
 	});
@@ -15,9 +23,7 @@ export async function uploadCall(file) {
 }
 
 export async function convertCall(data) {
-	console.log(data.outputFile);
-	console.log(data.options);
-	const rawResponse = await fetch("http://localhost:3005/convert", {
+	const rawResponse = await fetch(`${backendURL}/convert`, {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',
@@ -38,9 +44,9 @@ export async function convertCall(data) {
 }
 
 export async function downloadCall(data) {
-	const rawResponse = await fetch("http://localhost:3005/download?" + new URLSearchParams({
+	const rawResponse = await fetch(`${backendURL}/download?${new URLSearchParams({
 		file: data.file
-	}), {
+	})}`, {
 		method: 'GET'
 	});
 	const fileBlob = await rawResponse.blob();

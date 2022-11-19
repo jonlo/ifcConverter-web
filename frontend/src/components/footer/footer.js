@@ -1,6 +1,6 @@
 import './footer.css';
 import React from 'react';
-import { Button } from '../button';
+import { Button } from '../button/button';
 
 export function Footer(props) {
 	if (props.visible) {

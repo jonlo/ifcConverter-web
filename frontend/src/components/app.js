@@ -1,11 +1,11 @@
-import { Scene } from './scene';
+import { Scene } from './scene3d/scene';
 import './App.css';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { CenterPanel } from './centerPanel/centerPanel'
 import { LoadingScreen } from './centerPanel/loadingScreen'
 import React from 'react';
-import { uploadCall, convertCall, downloadCall } from '../api/apiCalls';
+import {AppController}from './appController';
 
 function App() {
   const [convertedFile, setConvertedFile] = React.useState(null);
@@ -14,7 +14,7 @@ function App() {
   const [options, updateOptions] = React.useState([]);
   const [convertTo, updateConvertTo] = React.useState("dae");
   const [converting, setConvertIng] = React.useState(false);
-
+  
   const onFileConverted = (file) => {
     setConvertedFile(file);
   }
@@ -26,9 +26,7 @@ function App() {
 
   const convertIfc = async (e) => {
     setConvertIng(true);
-    await uploadCall(file);
-    const convertResponse = await convertCall({ file: fileName, options: options, outputFile: `${fileName.split('.')[0]}.${convertTo.id}` });
-    const downloadedFile = await downloadCall(convertResponse);
+    const downloadedFile = await AppController.convertIfc(file,fileName,options,convertTo);
     onFileConverted(downloadedFile);
     setConvertIng(false);
   }
@@ -40,7 +38,6 @@ function App() {
     } else {
       updateConvertTo(items.find(item => item.selected));
     }
-
   }
 
   const reset = () => {
@@ -50,11 +47,7 @@ function App() {
   }
 
   const download = () => {
-    const url = window.URL.createObjectURL(convertedFile);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = convertedFile.name;
-    a.click();
+    AppController.download(convertedFile);
   }
 
   return (
@@ -64,10 +57,8 @@ function App() {
       <LoadingScreen visible={converting}> </LoadingScreen>
       <Scene file={convertedFile}></Scene>
       <Footer convertIfc={convertIfc} visible={(file !== null || convertedFile )&& !converting} mode={convertedFile ? 'reset' : 'convert'} reset={reset} download={download}></Footer>
-
     </div>
   );
 }
 
 export default App;
-// 

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { Loader } from './scene3d/loader';
+import { Loader } from './loader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default class ViewGL {
