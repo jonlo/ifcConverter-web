@@ -18,6 +18,7 @@ export async function uploadCall(file) {
 		return responseData;
 	} else {
 		console.log("error");
+		return null;
 	}
 
 }
@@ -40,6 +41,7 @@ export async function convertCall(data) {
 		return responseData;
 	} else {
 		console.log("error");
+		return null;
 	}
 }
 
@@ -54,6 +56,7 @@ export async function downloadCall(data) {
 		return blobToFile(fileBlob, data.file);
 	} else {
 		console.log("error");
+		return null;
 	}
 }
 
