@@ -7,6 +7,7 @@ let app = express();
 
 app.post('/convert', converter, (req, res) => {
     try {
+        res.set("Connection", "close");
         res.send({ ok: true, file: req.body.outputFile });
     } catch (error) {
         res.status(500);

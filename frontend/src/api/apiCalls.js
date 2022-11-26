@@ -1,7 +1,7 @@
-let backendURL = "http://localhost:3005";
+let backendURL = "http://localhost:3010";
 
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-	backendURL = "http://localhost:3005";
+	backendURL = "http://localhost:3010";
 } else {
 	backendURL = "/backend";
 }
