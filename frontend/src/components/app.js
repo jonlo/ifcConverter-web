@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="App">
       <Header convertIfc={convertIfc} onItemsUpdated={setUpdatedItems} ></Header>
-      <CenterPanel setFileData={setFileData} showPanel={convertedFile || converting ? false : true} ></CenterPanel>
+      <CenterPanel convertTo={convertTo} setFileData={setFileData} showPanel={convertedFile || converting ? false : true} ></CenterPanel>
       <LoadingScreen visible={converting}> </LoadingScreen>
       <Scene file={convertedFile}></Scene>
       <Footer convertIfc={convertIfc} visible={(file !== null || convertedFile) && !converting} mode={convertedFile ? 'reset' : 'convert'} reset={reset} download={download}></Footer>

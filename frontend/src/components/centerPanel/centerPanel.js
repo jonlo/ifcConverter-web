@@ -6,7 +6,7 @@ export function CenterPanel(props) {
 	if (props.showPanel) {
 		return (
 			<div className="Center-panel">
-				<DragDropFile onFileSelected={props.setFileData}></DragDropFile>
+				<DragDropFile convertTo={props.convertTo} onFileSelected={props.setFileData}></DragDropFile>
 			</div>
 		);
 	}

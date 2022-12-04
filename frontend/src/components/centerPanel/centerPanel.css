@@ -1,8 +1,11 @@
 .Center-panel {
+  position: fixed;
+  top:200px;
+  bottom: 100px;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 65%;
   display: flex;
-  padding: 2rem;
   padding: 0px;
   display: flex;
   flex-direction: column;

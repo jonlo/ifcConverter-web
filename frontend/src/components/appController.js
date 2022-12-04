@@ -13,7 +13,7 @@ export class AppController {
 	static async convertIfc(file, fileName, options, convertTo) {
 		await uploadCall(file);
 		const convertResponse = await convertCall({ file: fileName, options: options, outputFile: `${fileName.split('.')[0]}.${convertTo.id}` });
-		if (convertResponse !== null) {
+		if (convertResponse !== null && convertResponse.ok) {
 			const downloadedFile = await downloadCall(convertResponse);
 			if (downloadedFile !== null) {
 				return downloadedFile;

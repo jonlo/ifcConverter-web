@@ -1,9 +1,14 @@
 
 header{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  
   background-color: var(--color4);
   color: #fff;
   padding: 10px;
-  height: 15%;
+  /* height: 150px; */
   font-size: 3.75rem;
   font-weight: 700;
   letter-spacing: 3px;
