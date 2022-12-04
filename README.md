@@ -14,40 +14,51 @@ If you deploy it via docker, it will be launched using pm2, [pm2](https://pm2.ke
 
 ### post /upload
 
+```
 ifc : file
-
+```
 Uploads a ifc file
 
 Returns
 
+```
 data: {
     name: ifc.name,
     mimetype: ifc.mimetype,
     size: ifc.size
 }
+```
 
 ### post /convert
 
 body:
-
+```
 {
-file : fileName,
-options: [],
-outputFile:outPutFileName
+    file : fileName,
+    options: [],
+    outputFile:outPutFileName
 }
+```
+
 
 Converts an ifc file to the output file name extension file type. You can add IfcopenShell allowed optionss.
 
 Returns
-
-{ ok: bool, file: outputFileName }
+```
+{
+    ok: bool,
+    file: outputFileName 
+}
+```
 
 ### get /download
 
 queryParams:
 
 file : fileName
-
+```
+/download?file=yourFile.dae
+```
 Downloads a file
 
 Returns file
