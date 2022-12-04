@@ -6,7 +6,9 @@ The application is fully dockerized and can be deployed easily into two separate
 
 ## Backend
 
-The backend is developed under node.js, and uses [https://blenderbim.org/docs-python/ifcconvert/usage.html](IfcOpenShell) to transform IFC files to different 3d files.
+The backend is developed under node.js, and uses [IfcOpenShell](https://blenderbim.org/docs-python/ifcconvert/usage.html) to transform IFC files to different 3d files.
+
+If you deploy it via docker, it will be launched using pm2, [pm2](https://pm2.keymetrics.io/) allowing the application to run under cluster mode.
 
 ### post /upload
 
