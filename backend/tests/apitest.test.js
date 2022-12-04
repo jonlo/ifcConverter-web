@@ -4,6 +4,13 @@ const requestWithSupertest = supertest(server);
 
 describe('User Endpoints', () => {
 
+  // it('GET /convert convert ifc to dae', async () => {
+  //   const res = await requestWithSupertest.get('/hello');
+  //   expect(res.status).toEqual(200);
+
+  // });
+
+
   it('POST /convert convert ifc to dae', async () => {
     const res = await requestWithSupertest.post('/convert').send({ options: [], file: "haus.ifc", outputFile: "haus.dae" });
     expect(res.status).toEqual(200);

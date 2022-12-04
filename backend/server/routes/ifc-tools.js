@@ -53,4 +53,9 @@ app.get('/download', function (req, res) {
     }
 });
 
+app.get('/hello', function (req, res) {
+    res.send({ok:true});
+});
+
+
 module.exports = app;

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node prod_script",
     "dev": "node dev_script",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=60000"
   },
   "author": "",
   "license": "ISC",
