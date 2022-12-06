@@ -3,7 +3,7 @@ let backendURL = "http://localhost:3010";
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 	backendURL = "http://localhost:3010";
 } else {
-	backendURL = "/backend";
+	backendURL = "/ifcconverter/backend";
 }
 
 export async function uploadCall(file) {
