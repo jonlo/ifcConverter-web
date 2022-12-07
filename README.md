@@ -6,6 +6,9 @@ This project is divided into a backend application that allows you to convert a 
 
 The application is fully dockerized and can be deployed easily into two separated components.
 
+
+![](https://github.com/jonlo/ifcConverter-web/ifc-convert.gif)
+
 ## Backend
 
 The backend is developed under node.js, and uses [IfcOpenShell](https://blenderbim.org/docs-python/ifcconvert/usage.html) to transform IFC files to different 3d files.
