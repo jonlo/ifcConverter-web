@@ -7,7 +7,7 @@ This project is divided into a backend application that allows you to convert a 
 The application is fully dockerized and can be deployed easily into two separated components.
 
 
-![](https://github.com/jonlo/ifcConverter-web/ifc-convert.gif)
+![](https://github.com/jonlo/ifcConverter-web/blob/main/ifc-convert.gif)
 
 ## Backend
 
