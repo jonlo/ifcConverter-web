@@ -28,7 +28,7 @@ export class Scene extends React.Component {
 		const file = this.props.file;
 		if (file && this.viewGL) {
 			this.viewGL.setCanvas(this.canvasRef.current);
-			this.viewGL.onWindowResize(window.innerWidth,window.innerHeight * 0.7);
+			this.viewGL.onWindowResize(window.innerWidth,window.innerHeight);
 			this.viewGL.updateFile(file);
 		}
 		window.addEventListener('resize', this.handleResize);
@@ -46,7 +46,7 @@ export class Scene extends React.Component {
 	}
 
 	handleResize = () => {
-		this.viewGL.onWindowResize(window.innerWidth, window.innerHeight * 0.7);
+		this.viewGL.onWindowResize(window.innerWidth, window.innerHeight);
 	};
 
 	render() {
