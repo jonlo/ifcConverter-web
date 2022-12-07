@@ -2,10 +2,12 @@
 
 Convert your ifc files to different 3d objects.
 
-This project is divided into a backend application that allows you to convert a IFC file to different 3d files, and a frontent which let's you upload the file and preview it before downloading.
+I made a wrapper around Ifc Open shell, a library that allows you to convert IFC files to other formats (dae, obj, stl, etc) using different options.
+It's built on React, Nodejs, three.js and IfcOpenshell.
+The backend can be deployed on his own, which can be very useful not only for the web (where there are very good solutions such as ifc.js) but also for unity or unreal applications where plugins for this type of task are quite expensive.
+The front allows you to upload and preview your Ifc in a webgl canvas before downloading it.
 
-The application is fully dockerized and can be deployed easily into two separated components.
-
+It's fully dockerized(into three different containers) and can be deployed anywhere using pm2 to manage the nodejs process, allowing you to work in cluster mode for better perfomance.
 
 ![](https://github.com/jonlo/ifcConverter-web/blob/main/ifc-convert.gif)
 
