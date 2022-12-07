@@ -5,6 +5,11 @@
 		"selected": true
 	},
 	{
+		"id": "glb",
+		"value": "glb",
+		"selected": false
+	},
+	{
 		"id": "obj",
 		"value": "WaveFront OBJ",
 		"selected": false

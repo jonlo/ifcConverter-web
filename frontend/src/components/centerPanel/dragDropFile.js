@@ -21,7 +21,7 @@ export function DragDropFile(props) {
 
 
     const previewEnabled = () => {
-        if (props.convertTo.id === "obj" || props.convertTo.id === "dae") {
+        if (props.convertTo.id === "obj" || props.convertTo.id === "dae" || props.convertTo.id === "glb") {
             return true;
         }
     }
