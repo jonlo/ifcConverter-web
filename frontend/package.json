@@ -37,5 +37,9 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "homepage": "."
+=======
+  "homepage": "/ifcconverter"
+>>>>>>> 9265b0d311fc5337e86d8ff0bfb64d61f1e7209f
 }

@@ -11,9 +11,8 @@ app.post('/convert', converter, (req, res) => {
         res.send({ ok: true, file: req.body.outputFile });
     } catch (error) {
         res.status(500);
-        res.json({
-            error: "wrong scans json provided"
-        })
+        res.send({ ok: false, file: req.body.outputFile });
+
     }
 })
 
@@ -53,5 +52,10 @@ app.get('/download', function (req, res) {
         })
     }
 });
+
+app.get('/hello', function (req, res) {
+    res.send({ok:true});
+});
+
 
 module.exports = app;

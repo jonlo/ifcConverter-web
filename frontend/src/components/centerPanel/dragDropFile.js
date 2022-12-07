@@ -21,7 +21,7 @@ export function DragDropFile(props) {
 
 
     const previewEnabled = () => {
-        if(props.convertTo.id === "obj" || props.convertTo.id === "dae") {
+        if (props.convertTo.id === "obj" || props.convertTo.id === "dae") {
             return true;
         }
     }
@@ -58,7 +58,7 @@ export function DragDropFile(props) {
                 <div>
                     {!previewEnabled() && <p>3d preview not avaiable</p>}
                     <p>Drag and drop your <b>.IFC</b> file here</p>
-                    <img src="./ifclogo.png" className="form-file-logo" alt="logo"></img>
+                    <img src={process.env.PUBLIC_URL + '/ifclogo.png'} className="form-file-logo" alt="logo"></img>
                     <button className="upload-button" onClick={onButtonClick}>Upload a file</button>
                 </div>
             </label>
